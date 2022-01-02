@@ -1,0 +1,20 @@
+{
+  "name": "messenger",
+  "version": "1.0.0",
+  "description": "Web messenger",
+  "author": "Egor Laptev",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-rename": "latest",
+    "gulp-rigger": "latest",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-stylus": "latest",
+    "gulp-uglify": "latest",
+    "gulp-watch": "latest",
+    "rimraf": "latest"
+  }
+}

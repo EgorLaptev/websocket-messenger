@@ -12,15 +12,18 @@ const rigger                = require('gulp-rigger');
 const path = {
     src: {
         css: 'src/stylus/**/*.styl',
-        html: 'src/templates/*.html'
+        html: 'src/templates/*.html',
+        fonts: 'src/media/fonts/**/*.ttf'
     },
     build: {
         css: 'build/assets/css',
-        html: 'build'
+        html: 'build',
+        fonts: 'build/assets/media/fonts'
     },
     watch: {
         css: 'src/stylus/**/*.styl',
-        html: 'src/templates/**/*.html'
+        html: 'src/templates/**/*.html',
+        fonts: 'src/media/fonts/**/*'
     },
     clean: 'build'
 }
@@ -43,9 +46,15 @@ function build_html() {
         .pipe(dest(path.build.html));
 }
 
+function build_fonts() {
+    return src(path.src.fonts)
+        .pipe(dest(path.build.fonts));
+}
+
 function build(cb) {
     build_css();
     build_html();
+    build_fonts();
     cb();
 }
 
@@ -56,8 +65,10 @@ function clear(cb) {
 function build_watch () {
     watch(path.watch.css, { ignoreInitial: false }, build_css);
     watch(path.watch.html, { ignoreInitial: false }, build_html);
+    watch(path.watch.fonts, { ignoreInitial: false }, build_fonts);
 }
 
-exports.watch   = build_watch;
+exports.default = build;
 exports.build   = build;
 exports.clear   = clear;
+exports.watch   = build_watch;

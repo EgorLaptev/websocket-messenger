@@ -1,0 +1,46 @@
+@import './colors.styl';
+
+body
+  position: absolute;
+  inset 0
+  display flex
+  flex-direction column
+  justify-content center
+  align-items center
+
+.title
+  color: $orange
+  font-size 100rem
+
+.sign-link
+  color $grey-1
+  font-size 20px
+  margin-top 30px
+  &::first-letter
+    text-transform uppercase
+
+.form
+  margin-top: 85px
+  display grid
+  grid-gap 10px 20px
+
+  &__input
+    border-radius 50px
+    color $bg-color
+    font-size 17px
+    font-family Roboto, sans-serif
+    padding: 15px
+    background-color $pale-orange
+    &::placeholder
+      color $bg-color
+      text-transform uppercase
+      transition opacity .1s
+    &:hover::placeholder
+    &:focus::placeholder
+      opacity 0
+  &__submit
+    background-color $orange
+    grid-column 1 / -1
+    text-transform uppercase
+    &:hover
+      background-color lighten($orange, -5%)

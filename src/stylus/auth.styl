@@ -9,7 +9,7 @@ body
   align-items center
 
 .title
-  color: $orange
+  color: $accent-color
   font-size 100rem
 
 .sign-link
@@ -22,15 +22,14 @@ body
 .form
   margin-top: 85px
   display grid
-  grid-gap 10px 20px
-
+  grid-gap 10px 15px
   &__input
     border-radius 50px
     color $bg-color
     font-size 17px
     font-family Roboto, sans-serif
     padding: 15px
-    background-color $pale-orange
+    background-color lighten(desaturate($accent-color, 60%), 10)
     &::placeholder
       color $bg-color
       text-transform uppercase
@@ -39,8 +38,8 @@ body
     &:focus::placeholder
       opacity 0
   &__submit
-    background-color $orange
+    background-color $accent-color
     grid-column 1 / -1
     text-transform uppercase
     &:hover
-      background-color lighten($orange, -5%)
+      background-color lighten($accent-color, -5%)

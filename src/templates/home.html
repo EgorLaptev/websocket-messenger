@@ -5,9 +5,72 @@
     <meta name="viewport" content="width=device-width, intial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="stylesheet" href="assets/css/home.min.css">
+    <script src="https://kit.fontawesome.com/19ce154370.js" crossorigin="anonymous"></script>
     <title>Home</title>
 </head>
 <body>
+
+<aside class="contacts">
+
+    <button class="contacts__toggle">
+        <i class="fas fa-caret-left"></i>
+    </button>
+
+    <form action="#" method="POST" class="contacts__form">
+        <img src="#" alt="User avatar" class="contact__avatar">
+        <input type="text" placeholder="search users" class="contacts__search">
+    </form>
+
+    <div class="separator"></div>
+
+    <ul class="contacts__list">
+        <li class="contacts__item contact">
+
+            <img src="#" alt="Contact avatar" class="contact__avatar">
+
+            <div class="contact__info">
+                <p class="contact__last-message">Yeah</p>
+                <time class="contact" datetime="2021-12-31">31.12.2021</time>
+            </div>
+
+            <button class="contact__delete">
+                <i class="fas fa-times"></i>
+            </button>
+
+        </li>
+    </ul>
+
+</aside>
+
+<main class="messenger">
+
+    <button class="messenger__lock">
+        <i class="fas fa-lock"></i>
+    </button>
+
+    <section class="messenger__body messages">
+
+        <div class="messages__group">
+            <img src="#" alt="Contact avatar" class="messages__avatar">
+            <ul class="messages__list">
+                <li class="messages__item">whats up!</li>
+                <li class="messages__item">how are you?</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <form action="#" method="POST" class="messenger__form type-form">
+        <input type="text" placeholder="type message" class="type-form__input">
+        <button class="type-form__additionals">
+            <i class="fab fa-artstation"></i>
+        </button>
+        <button type="submit" class="type-form__submit">
+            <i class="fab fa-telegram-plane"></i>
+        </button>
+    </form>
+
+</main>
 
 </body>
 </html>

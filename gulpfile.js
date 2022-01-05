@@ -13,17 +13,20 @@ const path = {
     src: {
         css: 'src/stylus/**/*.styl',
         html: 'src/templates/*.html',
-        fonts: 'src/media/fonts/**/*.ttf'
+        fonts: 'src/media/fonts/**/*.ttf',
+        img: 'src/media/images/*',
     },
     build: {
         css: 'build/assets/css',
         html: 'build',
-        fonts: 'build/assets/media/fonts'
+        fonts: 'build/assets/media/fonts',
+        img: 'build/assets/media/images'
     },
     watch: {
         css: 'src/stylus/**/*.styl',
         html: 'src/templates/**/*.html',
-        fonts: 'src/media/fonts/**/*'
+        fonts: 'src/media/fonts/**/*',
+        img: 'src/media/images/**/*'
     },
     clean: 'build'
 }
@@ -51,10 +54,16 @@ function build_fonts() {
         .pipe(dest(path.build.fonts));
 }
 
+function build_images() {
+    return src(path.src.img)
+        .pipe(dest(path.build.img))
+}
+
 function build(cb) {
     build_css();
     build_html();
     build_fonts();
+    build_images();
     cb();
 }
 
@@ -66,6 +75,7 @@ function build_watch () {
     watch(path.watch.css, { ignoreInitial: false }, build_css);
     watch(path.watch.html, { ignoreInitial: false }, build_html);
     watch(path.watch.fonts, { ignoreInitial: false }, build_fonts);
+    watch(path.watch.img, { ignoreInitial: false }, build_images);
 }
 
 exports.default = build;

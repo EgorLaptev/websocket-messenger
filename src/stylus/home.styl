@@ -1,0 +1,253 @@
+@import "colors.styl"
+
+body
+  position: absolute;
+  width: 100vw
+  height: 100vh
+  display grid
+  grid-template-columns 325px 1fr
+  grid-template-rows 100vh
+
+.contacts
+  position relative
+  width 100%
+  height 100%
+  padding 25px 15px
+  display flex
+  flex-direction column
+  align-items center
+  justify-content flex-start
+  background $grey-dark
+  z-index: 10
+  &__form
+    height 50px
+    width 100%
+    display grid
+    grid-gap 10px
+    grid-template-columns 40px 1fr
+    grid-template-rows 40px
+    ^[-1]__avatar
+      height: 100%
+      width: 100%
+      border-radius 5px
+      object-fit cover
+    ^[-1]__search-wrap
+      height: 100%
+      position: relative;
+      .hashtag
+      .search
+        font-size 17px
+        position: absolute;
+        color: $grey-dark
+        left: 15px
+        top: 49%
+        transform translateY(-50%)
+      .search
+        font-size 19px
+        left: auto;
+        right: 15px
+      .hashtag
+        display none
+    ^[-1]__search
+      height 100%
+      width 100%
+      padding 10px 20px
+      border-radius 5px
+      font-size 18px
+      color $grey-dark
+      background $bg-color
+      text-align left
+      &::after
+        content: 'Hello'
+      &::placeholder
+        color $grey-dark
+        transition opacity .1s
+        ^[-1]hover::placeholder
+        ^[-1]focus::placeholder
+          opacity 0
+  &__separator
+    margin 35px 0 50px 0
+    height: 1px
+    width 265px
+    border-radius 5px
+    background $grey-light
+  &__list
+    width: 100%
+    list-style none
+    display grid
+    grid-template-columns 1fr
+    grid-gap 10px
+  .contact
+    cursor pointer
+    position relative
+    width 100%
+    height 45px
+    border-radius 5px
+    display flex
+    flex-direction row
+    align-items center
+    justify-content space-between
+    overflow hidden
+    &_active
+    &:hover
+      padding-left: 5px
+      border-left 2px solid cornflowerblue
+    &__avatar
+      height 45px
+      width 45px
+      border-radius 5px
+      object-fit cover
+    &__info
+      height: 100%
+      width: 100%
+      padding 0 10px 3px 10px
+      text-align left
+      display flex
+      flex-direction column
+      justify-content flex-end
+      align-items: flex-start;
+      ^[-1]__last-message
+        color $message-text
+        font-size 17px
+        line-height: 1.2em
+      ^[-1]__date
+        padding: 0
+        color $grey-mid
+        font-size 13px
+    &__delete
+      background: transparent
+      width: 70px
+      display flex
+      justify-content center
+      align-items: center;
+      height 100%
+      color $bg-color
+      font-size 20px
+      border-radius 5px
+      &:hover
+        background: $accent-color
+  &__toggle
+    display flex //          TEMPORARY DISPLAY NONE
+    justify-content: center;
+    align-items: center
+    z-index 10
+    position: absolute
+    right -20px
+    top: 50%
+    padding-right: 5px
+    transform translateY(-50%)
+    width 40px
+    height 40px
+    border-radius 5px
+    background $grey-mid
+    color $bg-color
+    font-size 35px
+    &:hover
+      background-color: $accent-color
+    &_alt
+      position absolute
+      right -100px
+      transform rotateZ(180deg)
+
+.messenger
+  position relative
+  width 100%
+  height 100%
+  display flex
+  justify-content center
+  align-items center
+  background $bg-color url("../media/images/BG.png") 50% 50%
+  background-size contain
+  padding 0 180px 100px 180px
+  &__lock
+    display flex
+    justify-content: center;
+    align-items: center;
+    height: 45px
+    width: 45px
+    position: absolute;
+    right: 25px
+    top: 25px
+    border-radius 5px
+    background: $grey-dark
+    color: $bg-color
+    font-size 20px
+    &:hover
+      background: $accent-color
+  .messages
+    height: 100%
+    width: 100%
+    display flex
+    flex-direction column
+    justify-content: flex-end;
+    .messages-group
+      display grid
+      grid-gap 10px
+      grid-template-columns 40px 1fr
+      max-width 45%
+      &__avatar
+        width: 40px
+        height: 40px
+      &__list
+        list-style none
+        padding: 0
+        margin: 0
+        display flex
+        flex-direction column
+        align-items: flex-start;
+      &__item
+        margin: 0
+        padding: 5px 10px
+        min-height 40px
+        display flex
+        flex-grow 0
+        margin-bottom: 5px
+        justify-content: center;
+        align-items: center;
+        color $message-text
+        background: $grey-dark
+        border-radius 0 5px 5px 5px
+      &__myself
+        float right
+        grid-template-columns 1fr 40px
+        align-self  flex-end
+        & .messages-group__item
+          border-radius 5px 0 5px 5px
+          align-self flex-end
+
+  .type-form
+    position: absolute;
+    left 50%
+    bottom: 25px
+    transform translateX(-50%)
+    height: 45px
+    border-radius 5px
+    overflow hidden
+    display flex
+    flex-direction row
+    justify-content center
+    align-items stretch
+    padding: 0
+    background: $grey-dark
+    &__input
+      width: 375px
+      text-align: left
+      color $message-text
+      background $grey-dark
+      padding 0 10px 0 30px
+      font-size 17px
+      &::placeholder
+        color $bg-color
+    &__additionals
+      background: $grey-dark
+      color $bg-color
+      font-size 20px
+      padding 0 15px
+    &__submit
+      background: $grey-mid
+      color $bg-color
+      font-size 25px
+      padding 0 15px 0 13px
+      border-radius 5px
+      &:hover
+        background: $accent-color

@@ -17,20 +17,38 @@
     </button>
 
     <form action="#" method="POST" class="contacts__form">
-        <img src="#" alt="User avatar" class="contact__avatar">
-        <input type="text" placeholder="search users" class="contacts__search">
+        <img src="assets/media/images/avatar.png" alt="User avatar" class="contacts__avatar">
+        <div class="contacts__search-wrap">
+            <i class="fas fa-hashtag hashtag"></i>
+            <i class="fas fa-search search"></i>
+            <input type="text" placeholder="Search users" class="contacts__search">
+        </div>
     </form>
 
-    <div class="separator"></div>
+    <div class="contacts__separator"></div>
 
     <ul class="contacts__list">
-        <li class="contacts__item contact">
+        <li class="contacts__item contact contact_active">
 
-            <img src="#" alt="Contact avatar" class="contact__avatar">
+            <img src="assets/media/images/avatar.png" alt="Contact avatar" class="contact__avatar">
 
             <div class="contact__info">
                 <p class="contact__last-message">Yeah</p>
-                <time class="contact" datetime="2021-12-31">31.12.2021</time>
+                <time class="contact__date" datetime="2021-12-31">31.12.2021</time>
+            </div>
+
+            <button class="contact__delete">
+                <i class="fas fa-times"></i>
+            </button>
+
+        </li>
+        <li class="contacts__item contact">
+
+            <img src="assets/media/images/avatar.png" alt="Contact avatar" class="contact__avatar">
+
+            <div class="contact__info">
+                <p class="contact__last-message">Yeah</p>
+                <time class="contact__date" datetime="2021-12-31">31.12.2021</time>
             </div>
 
             <button class="contact__delete">
@@ -44,24 +62,38 @@
 
 <main class="messenger">
 
-    <button class="messenger__lock">
+    <a href="sign_in.html" class="messenger__lock">
         <i class="fas fa-lock"></i>
-    </button>
+    </a>
 
     <section class="messenger__body messages">
 
-        <div class="messages__group">
-            <img src="#" alt="Contact avatar" class="messages__avatar">
-            <ul class="messages__list">
-                <li class="messages__item">whats up!</li>
-                <li class="messages__item">how are you?</li>
+        <div class="messages__group messages-group">
+            <img src="assets/media/images/avatar.png" alt="Contact avatar" class="messages-group__avatar">
+            <ul class="messages-group__list">
+                <li class="messages-group__item">whats up!</li>
+                <li class="messages-group__item">how are you?</li>
+            </ul>
+        </div>
+
+        <div class="messages__group messages-group messages-group__myself">
+            <ul class="messages-group__list">
+                <li class="messages-group__item">I'am fine</li>
+            </ul>
+            <img src="assets/media/images/avatar.png" alt="Contact avatar" class="messages-group__avatar">
+        </div>
+
+        <div class="messages__group messages-group">
+            <img src="assets/media/images/avatar.png" alt="Contact avatar" class="messages-group__avatar">
+            <ul class="messages-group__list">
+                <li class="messages-group__item">...</li>
             </ul>
         </div>
 
     </section>
 
     <form action="#" method="POST" class="messenger__form type-form">
-        <input type="text" placeholder="type message" class="type-form__input">
+        <input type="text" placeholder="Type message" class="type-form__input">
         <button class="type-form__additionals">
             <i class="fab fa-artstation"></i>
         </button>

@@ -8,6 +8,8 @@ const prefix                = require('gulp-autoprefixer');
 const minify                = require('gulp-minify-css');
 const sourcemaps            = require('gulp-sourcemaps');
 const rigger                = require('gulp-rigger');
+const webp                  = require('gulp-webp');
+const imagemin              = require('gulp-imagemin');
 
 const path = {
     src: {
@@ -56,6 +58,8 @@ function build_fonts() {
 
 function build_images() {
     return src(path.src.img)
+        .pipe(imagemin())
+        .pipe(webp())
         .pipe(dest(path.build.img))
 }
 

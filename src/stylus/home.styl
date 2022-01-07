@@ -83,14 +83,15 @@ body
     width 100%
     height 45px
     border-radius 5px
+    border-left 2px solid $grey-mid
     display flex
     flex-direction row
     align-items center
     justify-content space-between
     overflow hidden
+    padding-left: 5px
     &_active
     &:hover
-      padding-left: 5px
       border-left 2px solid cornflowerblue
     &__avatar
       height 45px
@@ -124,10 +125,10 @@ body
       color $bg-color
       font-size 20px
       border-radius 5px
-      &:hover
-        background: $accent-color
+      &:hover i
+          text-shadow  0 0 5px $accent-color
   &__toggle
-    display flex //          TEMPORARY DISPLAY NONE
+    display flex
     justify-content: center;
     align-items: center
     z-index 10
@@ -156,7 +157,7 @@ body
   display flex
   justify-content center
   align-items center
-  background $bg-color url("../media/images/BG.png") 50% 50%
+  background $bg-color url("../media/images/BG.webp") 50% 50%
   background-size contain
   padding 0 180px 100px 180px
   &__lock

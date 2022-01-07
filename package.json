@@ -8,6 +8,7 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "latest",
+    "gulp-imagemin": "^7.1.0",
     "gulp-minify-css": "latest",
     "gulp-rename": "latest",
     "gulp-rigger": "latest",
@@ -15,6 +16,7 @@
     "gulp-stylus": "latest",
     "gulp-uglify": "latest",
     "gulp-watch": "latest",
+    "gulp-webp": "^4.0.1",
     "rimraf": "latest"
   }
 }
